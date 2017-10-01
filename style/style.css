@@ -1,0 +1,39 @@
+#addForm
+{
+	display: none;
+}
+
+#cancelButton
+{
+	display: none;
+}
+
+.appointment
+{
+	width: 80%;
+	margin: auto;
+}
+
+.space
+{
+	height: 6px;
+}
+
+#error
+{
+	color: red;
+	font-size: 11px;
+	font-style: italic;
+}
+
+#logo
+{
+	height: 100px;
+	width: 250px;
+}
+
+#result
+{
+	width: 90%;
+	margin: auto;
+}

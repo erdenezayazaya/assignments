@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Appointment Schedule</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="../style/style.css">
+
+	<!-- Main Script -->
+	<script src="../script/script.js" async></script>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center">Appointment Schedule</h1>
+ 
+  <div class="row">
+  	   <div class="col-sm-4"></div>
+       <div class="col-sm-5" id="error"></div>
+       <div class="col-sm-2"></div>
+  </div>
+
+   <div class="form-group">
+     <div class="row">
+  	   <div class="col-sm-4">
+  	   </div>
+  	   <div class="col-sm-5">
+	      <button type="button" id="newButton" class="btn btn-primary" onclick="showAddForm()">NEW</button>
+	      <button type="button" class="btn btn-primary" id="cancelButton" onclick="hideAddForm()">CANCEL</button>
+	   </div>
+	   <div class="col-sm-2"></div>
+	  </div>
+  </div>
+
+  <div class="space">
+  </div>
+
+  <form class="form-horizontal" action="../cgi/insertData.cgi" id="addForm">
+	  <div class="form-group">
+	   <div class="row">
+	    <label class="control-label col-sm-4">Date:</label>
+	    <div class="col-sm-5">
+	      <input type="date" class="form-control" id="datePicker" name="date" placeholder="Enter Date" required>
+	    </div>
+	    <div class="col-sm-2"></div>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	   <div class="row">
+	    <label class="control-label col-sm-4">Time:</label>
+	    <div class="col-sm-5"> 
+	      <input type="time" class="form-control timepicker" name="time" placeholder="Enter Time" required>
+	    </div>
+	    <div class="col-sm-2"></div>
+	    </div>
+	  </div>	
+  	  <div class="form-group">
+  	  	<div class="row">
+		    <label class="control-label col-sm-4">Desc:</label>
+		    <div class="col-sm-5"> 
+		      <textarea class="form-control" rows="5" name="description" placeholder="Description" required></textarea>
+		    </div>
+		     <div class="col-sm-2"></div>
+		 </div>
+	  </div>	  
+  </form>
+
+  <div class="form-group">
+   <div class="row">
+    <div class="col-sm-4"></div>
+  	<div class="col-sm-4">
+  		<input type="text" class="form-control" placeholder="Search..." id="search">
+  	</div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-primary" onClick="getAppointments();">Search</button>
+    </div>
+    </div>
+  </div>
+
+  <div class="space">
+  </div>
+
+  <div class="row appointment" id="result">
+  	
+   </div>
+
+</div>
+
+</body>
